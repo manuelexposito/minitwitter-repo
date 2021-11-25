@@ -1,0 +1,28 @@
+<mat-card class="form-card">
+    <h1>Regístrate</h1>
+    <form [formGroup]="signUpDtoForm" class="form">
+
+        <mat-form-field appearance="fill" class="example-container">
+            <mat-label>Nombre de usuario</mat-label>
+            <input matInput placeholder="Nombre_de_Usuario" formControlName="username" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="example-container">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="tucorreo@example.com" formControlName="email" required>
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" >Enviar</button>
+
+    </form>
+</mat-card>

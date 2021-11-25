@@ -1,0 +1,16 @@
+
+
+.form-card{
+
+    padding: 80px;
+    width: 250px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.form{
+
+    display: flex;
+    flex-direction: column;
+    
+}
