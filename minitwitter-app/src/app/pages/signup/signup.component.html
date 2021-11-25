@@ -1,6 +1,6 @@
 <mat-card class="form-card">
     <h1>Regístrate</h1>
-    <form [formGroup]="signUpDtoForm" class="form">
+    <form [formGroup]="signUpDtoForm" class="form" (ngSubmit)="onSubmit()">
 
         <mat-form-field appearance="fill" class="example-container">
             <mat-label>Nombre de usuario</mat-label>
