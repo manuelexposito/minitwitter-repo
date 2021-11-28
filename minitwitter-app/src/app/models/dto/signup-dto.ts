@@ -7,8 +7,6 @@ export class AuthSignUpDto {
     password:string;
     code:string;
 
-
-    
     constructor() {
         this.username='';
         this.email = '';

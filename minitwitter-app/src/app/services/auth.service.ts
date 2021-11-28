@@ -13,7 +13,7 @@ const DEFAULT_HEADERS = {
 };
 
 //TODO : SACAR LA LISTA DE TWEETS
-//Dentro del método donde necesitemos el token par autorizar 
+//Dentro del método donde necesitemos el token par autorizar
 //haremos una cabecera como la de arriba, pero pondremos:
 // 'Authentication Bearer : localStorage.getItem('token')
 
@@ -37,11 +37,11 @@ getToken(){
 }
 
 
-signUp(signUp : AuthSignUpDto) : Observable<AuthSignUpResponse>{
+signUp(signUpDto : AuthSignUpDto) : Observable<AuthSignUpResponse>{
 
   let request = `${environment.apiUrlBase}/apiv1/auth/signup`
 
-  return this.http.post<AuthSignUpResponse>(request, signUp, DEFAULT_HEADERS)
+  return this.http.post<AuthSignUpResponse>(request, signUpDto, DEFAULT_HEADERS)
 
 }
 

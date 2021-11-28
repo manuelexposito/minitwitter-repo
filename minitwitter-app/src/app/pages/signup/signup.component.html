@@ -4,7 +4,7 @@
 
         <mat-form-field appearance="fill" class="example-container">
             <mat-label>Nombre de usuario</mat-label>
-            <input matInput placeholder="Nombre_de_Usuario" formControlName="username" required>
+            <input matInput placeholder="Nombre de usuario" formControlName="username" required>
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="example-container">
@@ -22,7 +22,7 @@
             </button>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" >Enviar</button>
+        <button mat-raised-button color="primary" (click)="signUp()" >Enviar</button>
 
     </form>
 </mat-card>

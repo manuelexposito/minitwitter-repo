@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthSignUpDto } from 'src/app/models/dto/signup-dto';
@@ -12,24 +13,25 @@ export class SignupComponent implements OnInit {
 
   submitted = false;
   hide = true;
- // signUpDto = new AuthSignUpDto(this.signUpDtoForm.value);
+  signUpDto = new AuthSignUpDto();
+
   signUpDtoForm = new FormGroup(
     {
       username: new FormControl(''),
       email : new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl(''),
-      code: new FormControl('')
+      code : new FormControl(`${environment.apiCode}`)
     }
   );
 
   constructor(private authService : AuthService) { }
 
   ngOnInit(): void {
+
+
+    console.log(this.signUpDtoForm.value)
   }
 
-
-
-  
 /*
   getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -44,8 +46,11 @@ export class SignupComponent implements OnInit {
   //TODO: Método SIGN UP Con conversión FORMGROUP -> DTO
   signUp(){
 
-    
-    
+    this.signUpDto = this.signUpDtoForm.value
+
+
+    console.log(this.signUpDto)
+
     this.authService.signUp(this.signUpDto).subscribe(
 
         r => {
@@ -53,7 +58,7 @@ export class SignupComponent implements OnInit {
         }
 
     )
-    
+
   }
   onSubmit() { this.submitted = true; }
 
