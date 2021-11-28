@@ -43,7 +43,6 @@ export class SignupComponent implements OnInit {
 }
 */
 
-  //TODO: Método SIGN UP Con conversión FORMGROUP -> DTO
   signUp(){
 
     this.signUpDto = this.signUpDtoForm.value
